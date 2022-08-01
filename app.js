@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const grid = document.querySelector(".grid")
+    
+    const scoreDisplay = document.getElementById('score')
+    const width = 28
+    let score = 0
+  
     const layout = [
         1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
         1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,
@@ -32,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ]
 
 
-    const squares
+    const squares = []
 
 //Legend
 
@@ -44,16 +48,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function createBoard(){
-    for (let i=0; i< layout.length; i++){
+  
+    for (let i=0; i < layout.length; i++){
         const sq = document.createElement("div")
         grid.appendChild(sq)
         squares.push(sq)
 
-
-        if (layout[i] === 0){
-            squares[i].classList.add("pac-dot")
+        if(layout[i] === 0) {
+            squares[i].classList.add('pac-dot')
+          } else if (layout[i] === 1) {
+            squares[i].classList.add('wall')
+          } else if (layout[i] === 2) {
+            squares[i].classList.add('ghost-lair')
+          } else if (layout[i] === 3) {
+            squares[i].classList.add('power-pellet')
+          }
         }
-    }
-}
+      }
+createBoard()
+
+
+
+let pacmanCurrentIndex = 490
+squares[pacmanCurrentIndex].classList.add('pac-man')
+
 
 })

@@ -1,10 +1,10 @@
 .grid{
     display: flex;
     flex-wrap: wrap;
-    border: 5px solid #FAFD86;
+    border: 5px solid #52154E;
     width: 500px;
     height: 500px;
-    background-color: black;
+    background-color: #111344;
 }
 
 
@@ -14,16 +14,16 @@
 }
 
 .pac-dot{
-    background-color: #FAFD86;
+    background-color: #F9CFF2;
     border: 5px solid white;
     box-sizing: border-box;
 }
 
 .wall{
-    background-color: white;
+    background-color: #52154E;
 }
 
 .power-pellet{
-    background-color: #B1B1B1;
+    background-color: #DAE0F2;
     border-radius: 10px;
 }
